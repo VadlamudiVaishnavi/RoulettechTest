@@ -8,7 +8,6 @@ function Recipe() {
   const item = items[id];
   return (
     <div className="Recipe">
-      <h2>{item.title}</h2>
       <div className="Recipe-content">
         <img src={item.image} alt={item.title} className="Recipe-image" />
         <div className="Recipe-details">

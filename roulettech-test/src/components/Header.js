@@ -1,9 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './Header.css';
 
-function Header() {
+function Header({ title }) {
   return (
     <header className="App-header">
-      <h1>Cookbook</h1>
+      <Link to="/" className="App-title">
+        <h1>{title}</h1>
+      </Link>
     </header>
   );
 }
