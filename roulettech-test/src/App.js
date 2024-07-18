@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
@@ -11,10 +11,10 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <Switch>
-          <Route exact path="/" component={Content} />
-          <Route path="/recipe/:id" component={Recipe} />
-        </Switch>
+        <Routes>
+          <Route exact path="/" element={<Content />} />
+          <Route path="/recipe/:id" element={<Recipe />} />
+        </Routes>
         <Footer />
       </div>
     </Router>

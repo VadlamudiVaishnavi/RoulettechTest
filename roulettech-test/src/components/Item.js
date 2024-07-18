@@ -6,7 +6,6 @@ function Item({ item, index }) {
     <Link to={`/recipe/${index}`} className="Item">
       <img src={item.image} alt={item.title} />
       <h2>{item.title}</h2>
-      <p>{item.description}</p>
     </Link>
   );
 }
