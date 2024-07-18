@@ -1,0 +1,29 @@
+.Recipe {
+  padding: 20px;
+  text-align: left;
+}
+
+.Recipe h2 {
+  color: #cc0000;
+}
+
+.Recipe-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.Recipe-image {
+  max-width: 50%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.Recipe-details {
+  max-width: 50%;
+}
+
+.Recipe-details p {
+  font-size: 16px;
+  color: #660000;
+}
