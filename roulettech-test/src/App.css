@@ -1,0 +1,47 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #ffcccc;
+  padding: 20px;
+  color: #660000;
+}
+
+.Content {
+  padding: 20px;
+}
+
+.Item {
+  border: 1px solid #ff9999;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: left;
+  background-color: #ffe6e6;
+  cursor: pointer;
+}
+
+.Item h2 {
+  color: #cc0000;
+}
+
+.Item p {
+  font-size: 16px;
+  color: #660000;
+}
+
+.Item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.App-footer {
+  background-color: #ffcccc;
+  padding: 10px;
+  color: #660000;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
