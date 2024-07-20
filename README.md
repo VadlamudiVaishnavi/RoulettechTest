@@ -134,6 +134,8 @@ backend/
 ## AWS Deployment
 
 ### Frontend Deployment to S3
+![Screenshot](./S3_bucket.png)
+![Screenshot](./frontend_on_S3.png)
 
 1. Build the React application.
 
