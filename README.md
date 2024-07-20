@@ -232,4 +232,4 @@ A detailed presentation of the project, including an overview of the tech stack,
 
 ## Live Demo
 
-You can access the live demo of the project [here](http://your-ec2-public-ip).
+You can access the live demo of the project [here]().
