@@ -227,8 +227,8 @@ backend/
 2. **Start the Backend**: Navigate to `backend`, activate the virtual environment, and run `python manage.py runserver`.
 3. **Access the Application**: Open your browser and navigate to `http://localhost:3000` for the frontend and `http://localhost:8000/api/recipes/` for the backend and add a recipe.
 4. **New Recipe Reflected on the Frontend**: After adding a new recipe on the backend, you can see the changes being reflected on the frontend.
-![Screenshot](./frontend_reflect.png)
-![Screenshot](./Frontend_routeforthenewrecipe.png)
+![Screenshot](./img/frontend_reflect.png)
+![Screenshot](./img/Frontend_routeforthenewrecipe.png)
 
 
 ## Using the Application
@@ -236,7 +236,7 @@ backend/
 ### Adding Recipes to the Backend
 
 To add recipes to the backend, you can use the Django admin interface or directly interact with the API endpoints using tools like Postman or cURL.
-![Screenshot](./backend_recipeadded.png)
+![Screenshot](./img/backend_recipeadded.png)
 
 #### Using API Endpoints
 
