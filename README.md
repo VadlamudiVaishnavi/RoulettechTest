@@ -12,6 +12,7 @@ This project is a simple cookbook web application developed as part of a take-ho
 - [Backend Setup](#backend-setup)
 - [AWS Deployment](#aws-deployment)
 - [How to Run the Project](#how-to-run-the-project)
+- [Using the Application](#using-the-application)
 - [Presentation](#presentation)
 
 ## Overview
@@ -224,7 +225,62 @@ backend/
 
 1. **Start the Frontend**: Navigate to `roulettech-test` and run `npm start`.
 2. **Start the Backend**: Navigate to `backend`, activate the virtual environment, and run `python manage.py runserver`.
-3. **Access the Application**: Open your browser and navigate to `http://localhost:3000` for the frontend and `http://localhost:8000` for the backend.
+3. **Access the Application**: Open your browser and navigate to `http://localhost:3000` for the frontend and `http://localhost:8000/api/recipes/` for the backend and add a recipe.
+4. **New Recipe Reflected on the Frontend**: After adding a new recipe on the backend, you can see the changes being reflected on the frontend.
+
+
+## Using the Application
+
+### Adding Recipes to the Backend
+
+To add recipes to the backend, you can use the Django admin interface or directly interact with the API endpoints using tools like Postman or cURL.
+
+#### Using API Endpoints
+
+##### Create a New Recipe
+- **Endpoint**: `POST /api/recipes/`
+- **Request Body**:
+  ```json
+  {
+    "title": "New Recipe",
+    "ingredients": "List of ingredients",
+    "instructions": "Step-by-step instructions",
+    "image_url": "URL of the image"
+  }
+  ```
+
+##### Retrieve All Recipes
+- **Endpoint**: `GET /api/recipes/`
+
+##### Retrieve a Single Recipe
+- **Endpoint**: `GET /api/recipes/{id}/`
+
+##### Update a Recipe
+- **Endpoint**: `PUT /api/recipes/{id}/`
+- **Request Body**:
+  ```json
+  {
+    "title": "Updated Recipe",
+    "ingredients": "Updated list of ingredients",
+    "instructions": "Updated instructions",
+    "image_url": "Updated URL of the image"
+  }
+  ```
+
+##### Delete a Recipe
+- **Endpoint**: `DELETE /api/recipes/{id}/`
+
+### CRUD Operations
+
+The backend API supports CRUD (Create, Read, Update, Delete) operations for managing recipes. Here is an overview of the available API endpoints:
+
+- **Create**: `POST /api/recipes/` - Add a new recipe.
+- **Read**: 
+  - `GET /api/recipes/` - Retrieve all recipes.
+  - `GET /api/recipes/{id}/` - Retrieve a specific recipe by ID.
+- **Update**: `PUT /api/recipes/{id}/` - Update an existing recipe.
+- **Delete**: `DELETE /api/recipes/{id}/` - Delete a recipe by ID.
+
 
 ## Presentation
 
