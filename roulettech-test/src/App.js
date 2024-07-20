@@ -1,19 +1,31 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, useParams } from 'react-router-dom';  // Removed 'Link'
 import Header from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
 import Recipe from './components/Recipe';
-import items from './components/items';
+import axios from 'axios';  // Ensure axios is installed
 import './App.css';
 
 function App() {
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:8000/api/recipes/')
+      .then(response => {
+        setRecipes(response.data);
+      })
+      .catch(error => {
+        console.error('There was an error fetching the recipes!', error);
+      });
+  }, []);
+
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Page title="Cookbook" component={Content} />} />
-          <Route path="/recipe/:id" element={<RecipePage />} />
+          <Route path="/" element={<Page title="Cookbook" component={Content} recipes={recipes} />} />
+          <Route path="/recipe/:id" element={<RecipePage recipes={recipes} />} />
         </Routes>
         <Footer />
       </div>
@@ -21,22 +33,27 @@ function App() {
   );
 }
 
-function Page({ title, component: Component }) {
+function Page({ title, component: Component, recipes }) {
   return (
     <>
       <Header title={title} />
-      <Component />
+      <Component recipes={recipes} />
     </>
   );
 }
 
-function RecipePage() {
+function RecipePage({ recipes }) {
   let { id } = useParams();
-  const item = items[id];
+  const recipe = recipes[id];
+
+  if (!recipe) {
+    return <div>Recipe not found</div>;
+  }
+
   return (
     <>
-      <Header title={item.title} />
-      <Recipe />
+      <Header title={recipe.title} />
+      <Recipe recipe={recipe} />
     </>
   );
 }
